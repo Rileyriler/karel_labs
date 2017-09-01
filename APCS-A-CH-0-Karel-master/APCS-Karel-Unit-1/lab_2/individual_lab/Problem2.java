@@ -14,7 +14,84 @@ public class Problem2 extends Robot
         super(st, av, dir, beep);
     }
 
-    public void setField(){
-        
+    public void setPins() {
+        RowOne();
+        RepositionRight();
+        RowTwo();
+        RepositionLeft();
+        RowThree();
+        RepositionRight();
+        RowFour();
+        RepositionLeft();
+        move();
+        RowThree();
+        RepositionRight();
+        RowTwo();
+        RepositionLeft();
+        RowOne();
+    }
+    
+    public void moveTwo() {
+        move();
+        move();
+    }
+    
+    public void turnRight() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+    
+    public void reverse() {
+        turnLeft();
+        turnLeft();
+    }
+    
+    public void RowOne() {
+        move();
+        putBeeper();
+        turnLeft();
+        move();
+    }
+    
+    public void RowTwo() {
+        putBeeper();
+        moveTwo();
+        putBeeper();
+        move();
+    }
+    
+    public void RowThree() {
+        putBeeper();
+        moveTwo();
+        putBeeper();
+        moveTwo();
+        putBeeper();
+        move();
+    }
+    
+    public void RowFour() {
+        putBeeper();
+        move();
+        move();
+        putBeeper();
+        move();
+        move();
+        putBeeper();
+        move();
+        move();
+        putBeeper();
+    }
+    
+    public void RepositionRight() {
+        turnRight();
+        move();
+        turnRight();
+    }
+    
+    public void RepositionLeft() {
+        turnLeft();
+        move();
+        turnLeft();
     }
 }

@@ -17,9 +17,87 @@ public class Harvester extends Robot
     
     public void harvest() {
         //Complete this method, using the methods you create below so that all rows are harvested
+        harvestTwoRows();
+        harvestTwoRows();
+        harvestTwoRows();
+        MoveToStart();
+        ReplaceTwoRows();
+        ReplaceTwoRows();
+        ReplaceTwoRows();
     }
     //your methods go below
+    /**
+     * Precondition: Robot facing east on block away from a row of beepers
+     * Postcondition: Robot facing east, two steets above where it started, one block away from a beeper 
+     */
+    public void harvestTwoRows() {
+        harvestOneRow();
+        repositionRight();
+        harvestOneRow();
+        repositionLeft();
+    }
     
+    public void harvestOneRow() {
+        move();
+        pickBeeper();
+        move();
+        pickBeeper();
+        move();
+        pickBeeper();
+        move();
+        pickBeeper();
+        move();
+        pickBeeper();
+        move();
+    }
     
+    public void repositionRight() {
+        turnLeft();
+        move();
+        turnLeft();
+    }
+    
+    public void repositionLeft() {
+        turnRight();
+        move();
+        turnRight();
+    }
+    
+    public void turnRight() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+    
+    public void MoveToStart() {
+        turnRight();
+        move();
+        move();
+        move();
+        move();
+        move();
+        move();
+        turnLeft();
+    }
+    
+    public void ReplaceTwoRows() {
+        replaceOneRow();
+        repositionRight();
+        replaceOneRow();
+        repositionLeft();
+    }
+    
+    public void replaceOneRow() {
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+    }
 }
-

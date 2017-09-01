@@ -14,7 +14,7 @@ public class Problem2Driver implements Directions
 {
     public static void main(String args[])  {
         Problem2 karel = new Problem2(1, 5, North, 16);
-        karel.setField();
+        karel.setPins();
         karel.turnOff();
     } 
 
