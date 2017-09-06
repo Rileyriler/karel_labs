@@ -1,4 +1,17 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ carpetRooms()
-numComments=1
+comment0.target=Problem2
+comment1.params=
+comment1.target=void\ turnRight()
+comment2.params=
+comment2.target=void\ carpetRooms()
+comment3.params=
+comment3.target=void\ MoveToRoom()
+comment4.params=
+comment4.target=void\ GoIntoRoom()
+comment5.params=
+comment5.target=void\ CarpetRoom()
+comment6.params=
+comment6.target=void\ LeaveRoom()
+comment7.params=
+comment7.target=void\ faceSouth()
+numComments=8
