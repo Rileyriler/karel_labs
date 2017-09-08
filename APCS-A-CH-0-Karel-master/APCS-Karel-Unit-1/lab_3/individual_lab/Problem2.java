@@ -21,42 +21,32 @@ public class Problem2 extends Robot
     }
 
     public void carpetRooms(){
-        MoveToRoom();
-        GoIntoRoom();
-        CarpetRoom();
-        MoveToRoom();
-        GoIntoRoom();
-        CarpetRoom();
-        MoveToRoom();
-        GoIntoRoom();
-        CarpetRoom();
-        MoveToRoom();
-        GoIntoRoom();
-        CarpetRoom();
-        MoveToRoom();
-        GoIntoRoom();
-        CarpetRoom();
-        MoveToRoom();
-        GoIntoRoom();
-        CarpetRoom();
-        MoveToRoom();
-        GoIntoRoom();
-        CarpetRoom();
-        MoveToRoom();
-        GoIntoRoom();
-        CarpetRoom();
+        examineRoom();
+        examineRoom();
+        examineRoom();
+        examineRoom();
+        examineRoom();
+        examineRoom();
+        examineRoom();
+        examineRoom();
     }
     
-    public void MoveToRoom(){
+    public void examineRoom() {
+        moveToRoom();
+        goIntoRoom();
+        carpetOneRoom();
+    }
+    
+    public void moveToRoom(){
         move();
         turnLeft();
     }
     
-    public void GoIntoRoom(){
+    public void goIntoRoom(){
         move();
     }
     
-    public void CarpetRoom()
+    public void carpetOneRoom()
     {
         if(frontIsClear() == false){
             turnLeft();
@@ -65,22 +55,22 @@ public class Problem2 extends Robot
                 turnLeft();
                 if(frontIsClear() == false){
                     putBeeper();
-                    LeaveRoom();
+                    leaveRoom();
                 }
                 else{
-                    LeaveRoom();
+                    leaveRoom();
                 }
             }
             else{
-                LeaveRoom();
+                leaveRoom();
             }
         }
         else{
-            LeaveRoom();
+            leaveRoom();
         }
     }
     
-    public void LeaveRoom() {
+    public void leaveRoom() {
         faceSouth();
         move();
         turnLeft();
@@ -98,6 +88,60 @@ public class Problem2 extends Robot
                         }
                     else {
                             if(facingEast()) {
+                                turnRight();
+                            }
+                        }
+                }
+        }
+        
+    public void faceWest()
+    {
+            if(facingEast()) {
+                    turnLeft();
+                    turnLeft();
+                }
+            else {
+                    if(facingNorth()) { 
+                            turnLeft();
+                        }
+                    else {
+                            if(facingSouth()) {
+                                turnRight();
+                            }
+                        }
+                }
+        }
+        
+    public void faceEast()
+    {
+            if(facingWest()) {
+                    turnLeft();
+                    turnLeft();
+                }
+            else {
+                    if(facingSouth()) { 
+                            turnLeft();
+                        }
+                    else {
+                            if(facingNorth()) {
+                                turnRight();
+                            }
+                        }
+                }
+        }
+    
+    public void faceNorth()
+    {
+            if(facingSouth()) {
+                    turnLeft();
+                    turnLeft();
+                }
+            else {
+                    if(facingEast()) { 
+                            turnLeft();
+                        }
+                    else {
+                            if(facingWest()) {
                                 turnRight();
                             }
                         }
